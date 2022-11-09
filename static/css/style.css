@@ -1,0 +1,57 @@
+/*
+Fonts links to include on new pages : 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Figtree&family=Kaushan+Script&family=Love+Light&display=swap" rel="stylesheet"> 
+*/
+/* Primary set of colors */
+/* Fonts */
+body {
+  background: #fff1c5;
+  font-family: "Figtree", sans-serif;
+  margin: 0;
+}
+
+header {
+  background: #9b5d73;
+  color: #c38b8b;
+  font-family: "Kaushan Script", cursive;
+  font-size: 3em;
+  padding-top: 1rem;
+  padding-right: 5rem;
+  text-align: right;
+  margin: 0 auto;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+nav {
+  background: #9b5d73;
+  margin: 0;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #fff1c5;
+  font-size: 1.2rem;
+  font-family: "Alice", serif;
+}
+nav ul li {
+  display: inline-block;
+  padding: 1em;
+  padding-top: 0;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+nav ul li a:hover {
+  text-shadow: white 0px 0px 3px;
+}
+
+/*# sourceMappingURL=style.css.map */
