@@ -23,5 +23,5 @@ In the end, the goal will be to be able to make it a simple app you can self-hos
 
 
 # USEFUL LINKS
-- Architecture : https://python.plainenglish.io/flask-crud-application-using-mvc-architecture-3b073271274f7
+- Architecture : https://plainenglish.io/blog/flask-crud-application-using-mvc-architecture
 - Translation : https://stackoverflow.com/questions/61124433/how-to-use-translation-in-flask
