@@ -1,5 +1,7 @@
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 import datetime
 from app import db
@@ -10,7 +12,19 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30))
-    password = db.Column(db.String(120))
+
+    password_hash = db.Column(db.String(128))
+
+    @property
+    def password(self):
+        raise AttributeError('password is not a readable attribute')
+
+    @password.setter
+    def password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
 
 class Account(db.Model):
@@ -18,6 +32,7 @@ class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     balance = db.Column(db.Float)
     name = db.Column(db.String(30))
+    
     # Operations in operation > backref.
 
     def add_operation(self, operation):
@@ -39,6 +54,7 @@ class Account(db.Model):
 
 
 class Operation(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     amount = db.Column(db.Float)
     reason = db.Column(db.String(120))
     date = db.Column(db.DateTime, nullable=False)

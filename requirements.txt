@@ -1,4 +1,17 @@
 Flask
 Flask-Migrate
 Flask-SQLAlchemy
+Flask-WTF
 psycopg2
+
+# Sessions and users
+werkzeug
+Flask-Login
+itsdangerous
+
+# Mails
+Flask-Mail
+
+# Pour quand j'aurai décidé de rendre ce code propre
+python-dotenv
+

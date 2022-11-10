@@ -39,6 +39,14 @@ header {
     margin:auto;
 }
 
+.center-align {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: $font-titles;
+}
+
 nav {
     background: $color1;
     margin:0;
