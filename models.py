@@ -7,12 +7,19 @@ import datetime
 from app import db
 
 
+from flask_login import LoginManager
+login = LoginManager()
+ 
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
 class User(db.Model):
     __tablename__ = 'user'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(30))
-
+    email = db.Column(db.String(30))
+ 
     password_hash = db.Column(db.String(128))
 
     @property
@@ -32,7 +39,7 @@ class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     balance = db.Column(db.Float)
     name = db.Column(db.String(30))
-    
+
     # Operations in operation > backref.
 
     def add_operation(self, operation):
